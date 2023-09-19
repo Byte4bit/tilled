@@ -1,4 +1,8 @@
-import { Request, RequestFuntionConfig, RequestFuntionResult } from "./Request";
+import {
+    Request,
+    RequestFuntionConfig,
+    RequestFuntionResult,
+} from "../Request";
 
 export interface TilledConfig {
     mode: "sandbox" | "production";
@@ -14,10 +18,6 @@ export class TilledBase {
         this.config = config;
         this.url =
             config.mode == "sandbox" ? this.url_sandbox : this.url_production;
-    }
-
-    public getConfig() {
-        return this.config;
     }
     public onRequest = async <D = any, R = any>(
         config: RequestFuntionConfig<D>,
