@@ -2,9 +2,19 @@
   "name": "tilled",
   "version": "1.0.0",
   "description": "payment tilled",
-  "main": "index.js",
+  "main": "./cjs/index.js",
+  "module": "./cjs/index.js",
+  "types": "./cjs/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "build": "npm run build:esm && npm run build:cjs",
+      "build:esm": "echo 'esm'",
+      "build:cjs": "tsc --module commonjs --outDir cjs",
+      "lint": "npx eslint src",
+      "lint:fix": "npm run lint -- --fix",
+      "prettier": "npx prettier src '!**/*.stories.tsx' --check",
+      "prettier:fix": "npm run prettier -- --write",
+      "format": "npm run prettier:fix && npm run lint:fix",
+      "flb": "npm run format && npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,5 +29,22 @@
   "bugs": {
     "url": "https://github.com/Byte4bit/tilled/issues"
   },
-  "homepage": "https://github.com/Byte4bit/tilled#readme"
+  "homepage": "https://github.com/Byte4bit/tilled#readme",
+  "files": [
+    "cjs",
+    "esm"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "20.4.4",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "eslint": "8.45.0",
+    "prettier": "^3.0.0",
+    "ts-loader": "^9.4.4",
+    "tslib": "^2.6.0",
+    "typescript": "^5.1.6"
+  }
 }
