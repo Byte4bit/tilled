@@ -1,5 +1,5 @@
 import { TilledBase } from "../Base";
-import { TilledPaymentProps } from "./interface";
+import { TilledPaymentProps } from "./Interface";
 
 export class TilledPayment {
     private tilled: TilledBase;
