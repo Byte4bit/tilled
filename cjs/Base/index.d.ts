@@ -2,6 +2,8 @@ import { RequestFuntionConfig, RequestFuntionResult } from "../Request";
 export interface TilledConfig {
     mode: "sandbox" | "production";
     merchant_account_id: string;
+    emial: string;
+    password: string;
 }
 export declare class TilledBase {
     private config;
