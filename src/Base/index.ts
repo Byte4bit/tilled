@@ -6,6 +6,7 @@ import {
 
 export interface TilledConfig {
     mode: "sandbox" | "production";
+    merchant_account_id:string
 }
 
 export class TilledBase {
@@ -25,6 +26,11 @@ export class TilledBase {
         return await Request<D, R>({
             ...config,
             url: `${this.url}${config.url}`,
+            headers:{
+                ...config.headers,
+                // ["tilled-api-key"]:this.config.secret_key,
+                ["tilled-account"]:this.config.merchant_account_id,
+            }
         });
     };
 }

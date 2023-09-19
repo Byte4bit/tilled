@@ -8,3 +8,9 @@ export class Tilled extends TilledBase {
         this.payment = new TilledPayment(this);
     }
 }
+
+export const __Tilled = (config: TilledConfig) => {
+    const c = new Tilled(config);
+    const { payment } = c;
+    return { payment };
+};
