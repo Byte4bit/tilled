@@ -1,0 +1,23 @@
+{
+  "name": "tilled",
+  "version": "1.0.0",
+  "description": "payment tilled",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Byte4bit/tilled.git"
+  },
+  "keywords": [
+    "payment",
+    "tilled"
+  ],
+  "author": "franciscoblancojn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Byte4bit/tilled/issues"
+  },
+  "homepage": "https://github.com/Byte4bit/tilled#readme"
+}
