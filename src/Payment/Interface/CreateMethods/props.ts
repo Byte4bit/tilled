@@ -1,20 +1,20 @@
-type AchDebitType = "checking" | "savings"
+export type AchDebitType = "checking" | "savings"
 
-interface AchDebit {
+export interface AchDebit {
     account_holder_name: string;
     account_number: string;
     account_type: AchDebitType;
     routing_number: string;
 }
 
-interface BillingDetails {
+export interface BillingDetails {
     address: Address;
     email: string;
     name: string;
     phone: string;
 }
 
-interface Address {
+export interface Address {
     city: string;
     country: string;
     state: string;
@@ -23,25 +23,25 @@ interface Address {
     zip: string;
 }
 
-interface Card {
+export interface Card {
     cvc?: string;
     exp_month: number;
     exp_year: number;
     number: string;
 }
 
-interface EftDebit {
+export interface EftDebit {
     account_holder_name: string;
     account_number: string;
     institution_id: string;
     transit_number: string;
 }
 
-interface Metadata {
+export interface Metadata {
     [id: string]: any;
 }
 
-type CreatePropsType = "card" | "ach_debit" | "eft_debit"
+export type CreatePropsType = "card" | "ach_debit" | "eft_debit"
 export interface onCreateProps {
     ach_debit?: AchDebit;
     billing_details?: BillingDetails;
