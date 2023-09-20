@@ -2,26 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TilledBase = void 0;
 const Request_1 = require("../Request");
-class TilledBase {
-    config;
-    url_sandbox = "https://sandbox-api.tilled.com";
-    url_production = "https://api.tilled.com";
-    url = "";
+const Auth_1 = require("../Auth");
+class TilledBase extends Request_1.TilledRequest {
+    auth;
     constructor(config) {
-        this.config = config;
-        this.url =
-            config.mode == "sandbox" ? this.url_sandbox : this.url_production;
+        super(config);
+        this.auth = new Auth_1.TilledAuth(config);
+        this.onLoadToken();
     }
-    onRequest = async (config) => {
-        return await (0, Request_1.Request)({
-            ...config,
-            url: `${this.url}${config.url}`,
-            headers: {
-                ...config.headers,
-                // ["tilled-api-key"]:this.config.secret_key,
-                ["tilled-account"]: this.config.merchant_account_id,
-            }
-        });
+    onLoadToken = async () => {
+        const result = await this.auth.onLogin(this.config);
+        this.token = result?.data?.token;
     };
 }
 exports.TilledBase = TilledBase;

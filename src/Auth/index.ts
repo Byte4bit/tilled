@@ -1,26 +1,56 @@
-import { TilledBase } from "../Base";
 import { TilledAuthProps } from "./Interface";
+import {  TilledConfigProps } from "../Config";
+import { Request, RequestFuntionConfig, RequestFuntionResult, TilledRequest } from "../Request";
 
-export class TilledAuth {
-    private tilled: TilledBase;
-    constructor(tilled: TilledBase) {
-        this.tilled = tilled;
+
+export interface TilledAuthRequestProps {
+    validateToken?:boolean
+}
+
+export class TilledAuth extends TilledRequest {
+    constructor(config: TilledConfigProps) {
+        super(config);
     }
-
-    public onLogin: TilledAuthProps["onLogin"]["function"] = async (
+    private onLogin: TilledAuthProps["onLogin"]["function"] = async (
         data: TilledAuthProps["onLogin"]["props"],
     ) => {
         const url = "/v1/auth/login";
-        const result = await this.tilled.onRequest<
+        const result = await this.onRequest<
             TilledAuthProps["onLogin"]["props"],
             TilledAuthProps["onLogin"]["result"]
         >({
             url,
-            data,
+            method:"post",
+            data:{
+                email:data.email,
+                password:data.password
+            },
         });
-        if(result?.data?.token){
-            this.tilled.setToken(result?.data?.token)
+        return result;
+    };
+    private onLoadToken = async () => {
+        const result = await this.onLogin(this.config);
+        this.token = result?.data?.token;
+    };
+    public onRequest = async <D = any, R = any>(
+        config: RequestFuntionConfig<D>,
+        options?:TilledAuthRequestProps
+    ): RequestFuntionResult<R> => {
+        if(options?.validateToken){
+            await this?.onLoadToken()
         }
-        return result
+        return await Request<D, R>({
+            ...config,
+            url: `${this.url}${config.url}`,
+            headers: {
+                ...config.headers,
+                ["tilled-account"]: this.config.merchant_account_id,
+                ...(this.token
+                    ? {
+                          ["Authorization"]: `Bearer ${this.token}`,
+                      }
+                    : {}),
+            },
+        });
     };
 }

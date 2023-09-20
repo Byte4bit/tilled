@@ -1,9 +1,10 @@
-import { TilledBase, TilledConfig } from "./Base";
+import { TilledBase } from "./Base";
+import { TilledConfigProps } from "./Config";
 import { TilledPayment } from "./Payment";
 export declare class Tilled extends TilledBase {
     payment: TilledPayment;
-    constructor(config: TilledConfig);
+    constructor(config: TilledConfigProps);
 }
-export declare const __Tilled: (config: TilledConfig) => {
+export declare const __Tilled: (config: TilledConfigProps) => {
     payment: TilledPayment;
 };

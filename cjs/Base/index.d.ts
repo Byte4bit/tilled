@@ -1,15 +1,7 @@
-import { RequestFuntionConfig, RequestFuntionResult } from "../Request";
-export interface TilledConfig {
-    mode: "sandbox" | "production";
-    merchant_account_id: string;
-    emial: string;
-    password: string;
-}
-export declare class TilledBase {
-    private config;
-    private url_sandbox;
-    private url_production;
-    private url;
-    constructor(config: TilledConfig);
-    onRequest: <D = any, R = any>(config: RequestFuntionConfig<D>) => RequestFuntionResult<R>;
+import { TilledRequest } from "../Request";
+import { TilledConfigProps } from "../Config";
+export declare class TilledBase extends TilledRequest {
+    private auth;
+    constructor(config: TilledConfigProps);
+    onLoadToken: () => Promise<void>;
 }

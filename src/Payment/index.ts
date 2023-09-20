@@ -14,9 +14,14 @@ export class TilledPayment {
         return await this.tilled.onRequest<
             TilledPaymentProps["onCreate"]["props"],
             TilledPaymentProps["onCreate"]["result"]
-        >({
-            url,
-            data,
-        });
+        >(
+            {
+                url,
+                data,
+            },
+            {
+                validateToken: true,
+            },
+        );
     };
 }
