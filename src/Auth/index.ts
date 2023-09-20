@@ -1,10 +1,14 @@
 import { TilledAuthProps } from "./Interface";
-import {  TilledConfigProps } from "../Config";
-import { Request, RequestFuntionConfig, RequestFuntionResult, TilledRequest } from "../Request";
-
+import { TilledConfigProps } from "../Config";
+import {
+    Request,
+    RequestFuntionConfig,
+    RequestFuntionResult,
+    TilledRequest,
+} from "../Request";
 
 export interface TilledAuthRequestProps {
-    validateToken?:boolean
+    validateToken?: boolean;
 }
 
 export class TilledAuth extends TilledRequest {
@@ -20,10 +24,10 @@ export class TilledAuth extends TilledRequest {
             TilledAuthProps["onLogin"]["result"]
         >({
             url,
-            method:"post",
-            data:{
-                email:data.email,
-                password:data.password
+            method: "post",
+            data: {
+                email: data.email,
+                password: data.password,
             },
         });
         return result;
@@ -34,10 +38,10 @@ export class TilledAuth extends TilledRequest {
     };
     public onRequest = async <D = any, R = any>(
         config: RequestFuntionConfig<D>,
-        options?:TilledAuthRequestProps
+        options?: TilledAuthRequestProps,
     ): RequestFuntionResult<R> => {
-        if(options?.validateToken){
-            await this?.onLoadToken()
+        if (options?.validateToken) {
+            await this?.onLoadToken();
         }
         return await Request<D, R>({
             ...config,

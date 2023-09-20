@@ -1,5 +1,3 @@
-
-
 import { TilledUrl } from "../Url";
 export interface TilledConfigProps {
     mode: "sandbox" | "production";
@@ -7,11 +5,11 @@ export interface TilledConfigProps {
     email: string;
     password: string;
 }
-export class TilledConfig extends TilledUrl{
+export class TilledConfig extends TilledUrl {
     protected config: TilledConfigProps;
 
     constructor(config: TilledConfigProps) {
-        super(config)
+        super(config);
         this.config = config;
     }
 }

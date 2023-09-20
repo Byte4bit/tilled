@@ -1,5 +1,5 @@
-import { TilledBase,  } from "./Base";
-import { TilledConfigProps} from "./Config";
+import { TilledBase } from "./Base";
+import { TilledConfigProps } from "./Config";
 import { TilledPayment } from "./Payment";
 export class Tilled extends TilledBase {
     public payment: TilledPayment;

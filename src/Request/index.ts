@@ -26,9 +26,7 @@ export const Request = async <D = any, R = any>(
     }
 };
 
-export interface TilledRequestOnRequestOptions {
-    
-}
+export interface TilledRequestOnRequestOptions {}
 export class TilledRequest extends TilledConfig {
     protected token: string | undefined = undefined;
 

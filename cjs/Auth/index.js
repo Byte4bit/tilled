@@ -13,7 +13,7 @@ class TilledAuth extends Request_1.TilledRequest {
             method: "post",
             data: {
                 email: data.email,
-                password: data.password
+                password: data.password,
             },
         });
         return result;

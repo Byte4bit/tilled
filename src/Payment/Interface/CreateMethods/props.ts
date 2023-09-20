@@ -36,7 +36,7 @@ interface EftDebit {
 }
 
 interface Metadata {
-    [id:string]:any
+    [id: string]: any;
 }
 export interface onCreateProps {
     ach_debit?: AchDebit;

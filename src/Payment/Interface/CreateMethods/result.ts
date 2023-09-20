@@ -44,9 +44,9 @@ interface Card {
 }
 
 interface Checks {
-    address_line1_check: "pass" |"fail"| "unavailable" |"unchecked";
-    address_postal_code_check: "pass" |"fail"| "unavailable" |"unchecked";
-    cvc_check: "pass" |"fail"| "unavailable" |"unchecked";
+    address_line1_check: "pass" | "fail" | "unavailable" | "unchecked";
+    address_postal_code_check: "pass" | "fail" | "unavailable" | "unchecked";
+    cvc_check: "pass" | "fail" | "unavailable" | "unchecked";
 }
 
 interface EftDebit {
@@ -57,7 +57,7 @@ interface EftDebit {
 }
 
 interface Metadata {
-    [id:string]:any
+    [id: string]: any;
 }
 
 export interface onCreateResult {
