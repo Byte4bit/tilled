@@ -1,4 +1,6 @@
 import { TilledPaymentCreateMethod } from "./CreateMethods";
+import { TilledPaymentCreateIntent } from "./CreateIntent";
 export interface TilledPaymentProps {
-    onCreate: TilledPaymentCreateMethod;
+    onCreateMethod: TilledPaymentCreateMethod;
+    onCreateIntent: TilledPaymentCreateIntent;
 }

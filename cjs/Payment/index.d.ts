@@ -3,5 +3,6 @@ import { TilledPaymentProps } from "./Interface";
 export declare class TilledPayment {
     private tilled;
     constructor(tilled: TilledBase);
-    onCreatePaymentMethod: TilledPaymentProps["onCreate"]["function"];
+    onCreatePaymentMethod: TilledPaymentProps["onCreateMethod"]["function"];
+    onCreatePaymentIntent: TilledPaymentProps["onCreateIntent"]["function"];
 }

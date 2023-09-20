@@ -15,6 +15,15 @@ class TilledPayment {
             validateToken: true,
         });
     };
+    onCreatePaymentIntent = async (data) => {
+        const url = "/v1/payment-intents";
+        return await this.tilled.onRequest({
+            url,
+            data,
+        }, {
+            validateToken: true,
+        });
+    };
 }
 exports.TilledPayment = TilledPayment;
 //# sourceMappingURL=index.js.map
