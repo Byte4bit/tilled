@@ -18,6 +18,28 @@ class TilledAuth extends Request_1.TilledRequest {
         });
         return result;
     };
+    onLoadToken = async () => {
+        const result = await this.onLogin(this.config);
+        this.token = result?.data?.token;
+    };
+    onRequest = async (config, options) => {
+        if (options?.validateToken) {
+            await this?.onLoadToken();
+        }
+        return await (0, Request_1.Request)({
+            ...config,
+            url: `${this.url}${config.url}`,
+            headers: {
+                ...config.headers,
+                ["tilled-account"]: this.config.merchant_account_id,
+                ...(this.token
+                    ? {
+                        ["Authorization"]: `Bearer ${this.token}`,
+                    }
+                    : {}),
+            },
+        });
+    };
 }
 exports.TilledAuth = TilledAuth;
 //# sourceMappingURL=index.js.map

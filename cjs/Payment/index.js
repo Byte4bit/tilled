@@ -7,11 +7,12 @@ class TilledPayment {
         this.tilled = tilled;
     }
     onCreate = async (data) => {
-        await this.tilled.onLoadToken();
         const url = "/v1/payment-methods";
         return await this.tilled.onRequest({
             url,
             data,
+        }, {
+            validateToken: true,
         });
     };
 }
