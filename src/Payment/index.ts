@@ -7,13 +7,31 @@ export class TilledPayment {
         this.tilled = tilled;
     }
 
-    public onCreate: TilledPaymentProps["onCreate"]["function"] = async (
-        data: TilledPaymentProps["onCreate"]["props"],
+    public onCreatePaymentMethod: TilledPaymentProps["onCreateMethod"]["function"] = async (
+        data: TilledPaymentProps["onCreateMethod"]["props"],
     ) => {
         const url = "/v1/payment-methods";
         return await this.tilled.onRequest<
-            TilledPaymentProps["onCreate"]["props"],
-            TilledPaymentProps["onCreate"]["result"]
+            TilledPaymentProps["onCreateMethod"]["props"],
+            TilledPaymentProps["onCreateMethod"]["result"]
+        >(
+            {
+                url,
+                data,
+            },
+            {
+                validateToken: true,
+            },
+        );
+    };
+
+    public onCreatePaymentIntent: TilledPaymentProps["onCreateIntent"]["function"] = async (
+        data: TilledPaymentProps["onCreateIntent"]["props"],
+    ) => {
+        const url = "/v1/payment-intents";
+        return await this.tilled.onRequest<
+            TilledPaymentProps["onCreateIntent"]["props"],
+            TilledPaymentProps["onCreateIntent"]["result"]
         >(
             {
                 url,

@@ -6,7 +6,7 @@ class TilledPayment {
     constructor(tilled) {
         this.tilled = tilled;
     }
-    onCreate = async (data) => {
+    onCreatePaymentMethod = async (data) => {
         const url = "/v1/payment-methods";
         return await this.tilled.onRequest({
             url,
