@@ -5,4 +5,6 @@ export const ValidatorPaymentCreateMethod = FenextjsValidator<
     TilledPaymentProps["onCreateMethod"]["props"]
 >()
     .setName("create-payment-method")
-    .isObject({});
+    .isObject({
+        type:FenextjsValidator().isString().isRequired().isEqual("")
+    });
