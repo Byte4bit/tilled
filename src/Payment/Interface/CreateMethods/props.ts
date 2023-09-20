@@ -1,7 +1,9 @@
+type AchDebitType = "checking" | "savings"
+
 interface AchDebit {
     account_holder_name: string;
     account_number: string;
-    account_type: "checking" | "savings";
+    account_type: AchDebitType;
     routing_number: string;
 }
 
@@ -38,6 +40,8 @@ interface EftDebit {
 interface Metadata {
     [id: string]: any;
 }
+
+type CreatePropsType = "card" | "ach_debit" | "eft_debit"
 export interface onCreateProps {
     ach_debit?: AchDebit;
     billing_details?: BillingDetails;
@@ -46,5 +50,5 @@ export interface onCreateProps {
     metadata?: Metadata;
     nick_name?: string;
     payment_token?: string;
-    type: "card" | "ach_debit" | "eft_debit";
+    type: CreatePropsType;
 }

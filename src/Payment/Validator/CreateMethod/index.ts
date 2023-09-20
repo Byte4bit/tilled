@@ -6,5 +6,5 @@ export const ValidatorPaymentCreateMethod = FenextjsValidator<
 >()
     .setName("create-payment-method")
     .isObject({
-        type:FenextjsValidator().isString().isRequired().isEqual("")
+        type:FenextjsValidator().isString().isRequired().isEqual(["card" , "ach_debit" , "eft_debit"])
     });

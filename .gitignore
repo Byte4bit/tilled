@@ -7,5 +7,6 @@
 package-lock.json
 
 test.js
+test.ts
 
 bun.lockb

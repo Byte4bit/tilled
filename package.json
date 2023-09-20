@@ -6,7 +6,7 @@
   "module": "./cjs/index.js",
   "types": "./cjs/index.d.ts",
   "scripts": {
-    "test": "npm run build && node test.js",
+    "test": "bun run test.ts",
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "echo 'esm'",
     "build:cjs": "tsc --module commonjs --outDir cjs",
