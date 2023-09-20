@@ -17,6 +17,7 @@ export class TilledPayment {
                 {
                     url,
                     data,
+                    method:"post"
                 },
                 {
                     validateToken: true,
@@ -34,6 +35,7 @@ export class TilledPayment {
                 {
                     url,
                     data,
+                    method:"post"
                 },
                 {
                     validateToken: true,

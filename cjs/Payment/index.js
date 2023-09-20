@@ -11,6 +11,7 @@ class TilledPayment {
         return await this.tilled.onRequest({
             url,
             data,
+            method: "post"
         }, {
             validateToken: true,
         });
@@ -20,6 +21,7 @@ class TilledPayment {
         return await this.tilled.onRequest({
             url,
             data,
+            method: "post"
         }, {
             validateToken: true,
         });
