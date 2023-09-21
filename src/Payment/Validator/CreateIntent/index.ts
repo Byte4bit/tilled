@@ -1,8 +1,6 @@
 import {
     onCreateProps,
     CurrencyConst,
-    Payment_method_const,
-    Capture_method_const,
 } from "../../Interface/CreateIntent/props";
 import { FenextjsValidator } from "fenextjs-validator";
 
@@ -19,12 +17,9 @@ export const ValidatorPaymentCreateIntent = FenextjsValidator<onCreateProps>()
             .isRequired()
             .isEqual(CurrencyConst),
         payment_method_types: FenextjsValidator()
-            .isString()
-            .isRequired()
-            .isEqual(Payment_method_const),
-        capture_method: FenextjsValidator()
-            .isString()
-            .isRequired()
-            .isEqual(Capture_method_const),
+            .isArray()
+            .isMaxOrEqual(1)
+            .isRequired(),
+            // .isEqual(Payment_method_const),
         payment_method_id: FenextjsValidator().isString().isRequired(),
     });

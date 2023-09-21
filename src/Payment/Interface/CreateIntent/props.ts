@@ -70,7 +70,7 @@ type Occurrence_type =
 export interface onCreateProps {
     amount: number;
     currency: Currency;
-    payment_method_types: Payment_method_types[];
+    payment_method_types:  Payment_method_types[];
     capture_method?: Capture_method;
     confirm?: boolean;
     level3?: Level3;
