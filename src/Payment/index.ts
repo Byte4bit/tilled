@@ -69,7 +69,7 @@ export class TilledPayment {
                 {
                     url,
                     data,
-                    method: "post",
+                    method: "put",
                 },
                 {
                     validateToken: true,
