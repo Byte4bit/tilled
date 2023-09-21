@@ -20,6 +20,6 @@ export const ValidatorPaymentCreateIntent = FenextjsValidator<onCreateProps>()
             .isArray()
             .isMaxOrEqual(1)
             .isRequired(),
-            // .isEqual(Payment_method_const),
+        // .isEqual(Payment_method_const),
         payment_method_id: FenextjsValidator().isString().isRequired(),
     });

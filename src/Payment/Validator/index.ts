@@ -5,5 +5,5 @@ import { ValidatorPaymentAttachCustomer } from "./AttachCustomer";
 export const Validators = {
     ValidatorPaymentCreateMethod,
     ValidatorPaymentCreateIntent,
-    ValidatorPaymentAttachCustomer
+    ValidatorPaymentAttachCustomer,
 };

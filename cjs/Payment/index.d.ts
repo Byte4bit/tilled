@@ -5,4 +5,5 @@ export declare class TilledPayment {
     constructor(tilled: TilledBase);
     onCreatePaymentMethod: TilledPaymentProps["onCreateMethod"]["function"];
     onCreatePaymentIntent: TilledPaymentProps["onCreateIntent"]["function"];
+    onAttachCustomerPaymentMethod: TilledPaymentProps["onAttachCustomer"]["function"];
 }

@@ -15,6 +15,6 @@ export class Tilled extends TilledBase {
 
 export const __Tilled = (config: TilledConfigProps) => {
     const c = new Tilled(config);
-    const { payment,customer } = c;
-    return { payment ,customer};
+    const { payment, customer } = c;
+    return { payment, customer };
 };

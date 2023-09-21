@@ -16,13 +16,10 @@ exports.ValidatorPaymentCreateIntent = (0, fenextjs_validator_1.FenextjsValidato
         .isRequired()
         .isEqual(props_1.CurrencyConst),
     payment_method_types: (0, fenextjs_validator_1.FenextjsValidator)()
-        .isString()
-        .isRequired()
-        .isEqual(props_1.Payment_method_const),
-    capture_method: (0, fenextjs_validator_1.FenextjsValidator)()
-        .isString()
-        .isRequired()
-        .isEqual(props_1.Capture_method_const),
+        .isArray()
+        .isMaxOrEqual(1)
+        .isRequired(),
+    // .isEqual(Payment_method_const),
     payment_method_id: (0, fenextjs_validator_1.FenextjsValidator)().isString().isRequired(),
 });
 //# sourceMappingURL=index.js.map

@@ -35,6 +35,20 @@ class TilledPayment {
             validateToken: true,
         });
     };
+    onAttachCustomerPaymentMethod = async (data) => {
+        const valid = Validator_1.Validators.ValidatorPaymentAttachCustomer.onValidate(data);
+        if (valid !== true) {
+            return valid;
+        }
+        const url = `/v1/payment-methods/${data.id}/attach`;
+        return await this.tilled.onRequest({
+            url,
+            data,
+            method: "put",
+        }, {
+            validateToken: true,
+        });
+    };
 }
 exports.TilledPayment = TilledPayment;
 //# sourceMappingURL=index.js.map
