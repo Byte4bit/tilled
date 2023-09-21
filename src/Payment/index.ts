@@ -10,9 +10,10 @@ export class TilledPayment {
 
     public onCreatePaymentMethod: TilledPaymentProps["onCreateMethod"]["function"] =
         async (data: TilledPaymentProps["onCreateMethod"]["props"]) => {
-            const valid = Validators.ValidatorPaymentCreateMethod.onValidate(data)
-            if(valid!==true){
-                return valid
+            const valid =
+                Validators.ValidatorPaymentCreateMethod.onValidate(data);
+            if (valid !== true) {
+                return valid;
             }
             const url = "/v1/payment-methods";
             return await this.tilled.onRequest<
@@ -22,7 +23,7 @@ export class TilledPayment {
                 {
                     url,
                     data,
-                    method:"post"
+                    method: "post",
                 },
                 {
                     validateToken: true,
@@ -32,9 +33,10 @@ export class TilledPayment {
 
     public onCreatePaymentIntent: TilledPaymentProps["onCreateIntent"]["function"] =
         async (data: TilledPaymentProps["onCreateIntent"]["props"]) => {
-            const valid = Validators.ValidatorPaymentCreateIntent.onValidate(data)
-            if(valid!==true){
-                return valid
+            const valid =
+                Validators.ValidatorPaymentCreateIntent.onValidate(data);
+            if (valid !== true) {
+                return valid;
             }
             const url = "/v1/payment-intents";
             return await this.tilled.onRequest<
@@ -44,7 +46,7 @@ export class TilledPayment {
                 {
                     url,
                     data,
-                    method:"post"
+                    method: "post",
                 },
                 {
                     validateToken: true,

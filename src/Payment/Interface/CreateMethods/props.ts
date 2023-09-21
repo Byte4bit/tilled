@@ -1,4 +1,4 @@
-export type AchDebitType = "checking" | "savings"
+export type AchDebitType = "checking" | "savings";
 
 export interface AchDebit {
     account_holder_name: string;
@@ -41,7 +41,7 @@ export interface Metadata {
     [id: string]: any;
 }
 
-export type CreatePropsType = "card" | "ach_debit" | "eft_debit"
+export type CreatePropsType = "card" | "ach_debit" | "eft_debit";
 export interface onCreateProps {
     ach_debit?: AchDebit;
     billing_details?: BillingDetails;

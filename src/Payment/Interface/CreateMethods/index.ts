@@ -6,5 +6,7 @@ import { ErrorFenextjs } from "fenextjs-error/cjs/Fenextjs";
 export interface TilledPaymentCreateMethod {
     props: onCreateProps;
     result: onCreateResult;
-    function: (data: onCreateProps) => RequestFuntionResult<onCreateResult> | ErrorFenextjs;
+    function: (
+        data: onCreateProps,
+    ) => RequestFuntionResult<onCreateResult> | ErrorFenextjs;
 }

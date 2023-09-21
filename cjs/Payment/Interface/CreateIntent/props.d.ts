@@ -17,8 +17,11 @@ interface Metadata {
     [id: string]: any;
 }
 type Currency = "aud" | "cad" | "dkk" | "eur" | "hkd" | "jpy" | "nzd" | "nok" | "gbp" | "zar" | "sek" | "chf" | "usd";
+export declare const CurrencyConst: string[];
 type Payment_method_types = "card" | "ach_debit" | "eft_debit" | "card_present";
+export declare const Payment_method_const: string[];
 type Capture_method = "automatic" | "manual";
+export declare const Capture_method_const: string[];
 type Occurrence_type = "consumer_ad_hoc" | "merchant_ad_hoc" | "merchant_recurring";
 export interface onCreateProps {
     amount: number;

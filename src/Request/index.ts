@@ -23,7 +23,12 @@ export const Request = async <D = any, R = any>(
     } catch (error: any) {
         return new ErrorFenextjs({
             data: error?.response?.data ?? error,
-            message: `${error?.response?.data?.message ?? error?.response?.message ?? error?.message ?? error}`,
+            message: `${
+                error?.response?.data?.message ??
+                error?.response?.message ??
+                error?.message ??
+                error
+            }`,
         });
     }
 };
