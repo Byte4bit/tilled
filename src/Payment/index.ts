@@ -53,4 +53,27 @@ export class TilledPayment {
                 },
             );
         };
+
+    public onAttachCustomerPaymentMethod: TilledPaymentProps["onAttachCustomer"]["function"] =
+        async (data: TilledPaymentProps["onAttachCustomer"]["props"]) => {
+            const valid =
+                Validators.ValidatorPaymentAttachCustomer.onValidate(data);
+            if (valid !== true) {
+                return valid;
+            }
+            const url = `/v1/payment-methods/${data.id}/attach`;
+            return await this.tilled.onRequest<
+                TilledPaymentProps["onAttachCustomer"]["props"],
+                TilledPaymentProps["onAttachCustomer"]["result"]
+            >(
+                {
+                    url,
+                    data,
+                    method: "post",
+                },
+                {
+                    validateToken: true,
+                },
+            );
+        };
 }
