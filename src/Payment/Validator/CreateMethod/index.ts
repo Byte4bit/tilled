@@ -80,7 +80,7 @@ export const ValidatorPaymentCreateMethod_card = FenextjsValidator<Card>()
         exp_year: FenextjsValidator()
             .isNumber()
             .isRequired()
-            .isMinOrEqual(1000)
+            .isMinOrEqual(new Date().getFullYear())
             .isMaxOrEqual(9999),
         number: FenextjsValidator().isString().isRequired(),
         // cvc?:  FenextjsValidator().isString();
