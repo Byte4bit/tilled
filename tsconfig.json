@@ -17,7 +17,7 @@
         "sourceMap": true,
         "baseUrl": "./src",
         "rootDir": "./src",
-        "outDir": "./esm",
+        "outDir": "./cjs",
         "strict": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
