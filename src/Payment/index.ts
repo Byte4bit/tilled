@@ -12,7 +12,7 @@ export class TilledPayment {
         async (data: TilledPaymentProps["onCreateMethod"]["props"]) => {
             const valid = Validators.ValidatorPaymentCreateMethod.onValidate(data)
             if(valid!==true){
-                throw valid
+                return valid
             }
             const url = "/v1/payment-methods";
             return await this.tilled.onRequest<
@@ -34,7 +34,7 @@ export class TilledPayment {
         async (data: TilledPaymentProps["onCreateIntent"]["props"]) => {
             const valid = Validators.ValidatorPaymentCreateIntent.onValidate(data)
             if(valid!==true){
-                throw valid
+                return valid
             }
             const url = "/v1/payment-intents";
             return await this.tilled.onRequest<

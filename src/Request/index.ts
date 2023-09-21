@@ -1,8 +1,11 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { TilledConfig, TilledConfigProps } from "../Config";
+import { ErrorFenextjs } from "fenextjs-error";
 
 export type RequestFuntionConfig<D = any> = AxiosRequestConfig<D>;
-export type RequestFuntionResult<R = any> = Promise<Partial<AxiosResponse<R>>>;
+export type RequestFuntionResult<R = any> = Promise<
+    Partial<AxiosResponse<R>> | ErrorFenextjs
+>;
 
 export type RequestFuntion<D = any, R = any> = (
     config: RequestFuntionConfig<D>,
@@ -18,11 +21,10 @@ export const Request = async <D = any, R = any>(
 
         return response;
     } catch (error: any) {
-        return {
-            status: 500,
-            statusText: `${error}`,
-            data: error,
-        };
+        return new ErrorFenextjs({
+            data: error?.response?.data ?? error,
+            message: `${error?.response?.data?.message ?? error?.response?.message ?? error?.message ?? error}`,
+        });
     }
 };
 

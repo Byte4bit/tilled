@@ -33,9 +33,29 @@ type Currency =
     | "chf"
     | "usd";
 
+export const CurrencyConst = [
+    "aud",
+    "cad",
+    "dkk",
+    "eur",
+    "hkd",
+    "jpy",
+    "nzd",
+    "nok",
+    "gbp",
+    "zar",
+    "sek",
+    "chf",
+    "usd",
+];
+
 type Payment_method_types = "card" | "ach_debit" | "eft_debit" | "card_present";
 
+export const Payment_method_const = ["card" , "ach_debit" , "eft_debit" , "card_present"];
+
 type Capture_method = "automatic" | "manual";
+
+export const Capture_method_const = ["automatic" , "automatic" ];
 
 type Occurrence_type =
     | "consumer_ad_hoc"
