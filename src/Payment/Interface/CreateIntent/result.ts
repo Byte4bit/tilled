@@ -1,3 +1,9 @@
+import {FundingType} from '../../../Const/Funding'
+import {CurrencyType} from '../../../Const/Currency'
+import {OccurrenceType} from '../../../Const/Occurrence'
+import {PaymentMethodType} from '../../../Const/PaymentMethod'
+import {CardBrandType} from '../../../Const/CardBrand'
+
 type Charge_status = "succeeded" | "pending" | "failed";
 
 type Charge_Failure_code =
@@ -31,20 +37,7 @@ type Charge_Failure_code =
     | "try_again_later"
     | "internal_error";
 
-type Currency =
-    | "aud"
-    | "cad"
-    | "dkk"
-    | "eur"
-    | "hkd"
-    | "jpy"
-    | "nzd"
-    | "nok"
-    | "gbp"
-    | "zar"
-    | "sek"
-    | "chf"
-    | "usd";
+
 
 type Refund2_Status = "canceled" | "pending" | "succeeded" | "failed";
 
@@ -66,7 +59,6 @@ type Reason =
     | "expired_uncaptured_charge"
     | "partial_capture";
 
-type Payment_method_types = "card" | "ach_debit" | "eft_debit" | "card_present";
 
 type CreateResult_status =
     | "canceled"
@@ -115,27 +107,10 @@ type LastPaymentError_code =
     | "try_again_later"
     | "internal_error";
 
-type Occurrence_type =
-    | "consumer_ad_hoc"
-    | "merchant_ad_hoc"
-    | "merchant_recurring";
 
 type Account_type = "checking" | "savings" | "unknown";
 
-type Brand =
-    | "amex"
-    | "diners"
-    | "discover"
-    | "jcb"
-    | "maestro"
-    | "mastercard"
-    | "solo"
-    | "visa"
-    | "visa_debit"
-    | "visa_electron"
-    | "unknown";
 
-type Funding = "credit" | "debit" | "prepaid" | "unknown";
 
 type Checks_status = "pass" | "fail" | "unavailable" | "unchecked";
 
@@ -165,7 +140,7 @@ interface PlatformFee {
     amount_refunded: number;
     charge_id: string;
     created_at: string;
-    currency: Currency;
+    currency: CurrencyType;
     id: string;
     payee_account_id: string;
     payer_account_id: string;
@@ -241,7 +216,7 @@ interface PaymentMethod {
     chargeable: boolean;
     created_at: string;
     id: string;
-    type: Payment_method_types;
+    type: PaymentMethodType;
     updated_at: string;
     ach_debit?: AchDebit;
     billing_details?: BillingDetails;
@@ -278,11 +253,11 @@ interface Address {
 
 interface Card {
     apple_pay?: boolean;
-    brand?: Brand;
+    brand?: CardBrandType;
     checks?: Checks;
     exp_month?: number;
     exp_year?: number;
-    funding?: Funding;
+    funding?: FundingType;
     holder_name?: string;
     last4?: string;
 }
@@ -308,9 +283,9 @@ export interface onCreateResult {
     charges: Charge[];
     client_secret: string;
     created_at: string;
-    currency: Currency;
+    currency: CurrencyType;
     id: string;
-    payment_method_types: Payment_method_types[];
+    payment_method_types: PaymentMethodType[];
     status: CreateResult_status;
     updated_at: string;
     canceled_at?: string;
@@ -319,7 +294,7 @@ export interface onCreateResult {
     last_payment_error?: LastPaymentError;
     level3?: Level3;
     metadata?: Metadata;
-    occurrence_type?: Occurrence_type;
+    occurrence_type?: OccurrenceType;
     payment_method?: PaymentMethod;
     platform_fee_amount?: number;
     statement_descriptor_suffix?: string;
