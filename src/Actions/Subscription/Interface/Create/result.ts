@@ -1,5 +1,6 @@
 import { CurrencyType } from "../../../../Const/Currency";
 import { IntervalUnitType } from "../../../../Const/IntervalUnit";
+import { StatusType } from "../../../../Const/Status";
 
 interface Metadata {
     [id: string]: any;
@@ -24,6 +25,6 @@ export interface onCreateResult {
     platform_fee_amount?: number;
     price: number;
     resume_at?: string;
-    status: string;
+    status: StatusType;
     updated_at: string;
 }
