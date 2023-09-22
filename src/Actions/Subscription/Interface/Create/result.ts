@@ -1,3 +1,6 @@
+import { CurrencyType } from "../../../../Const/Currency";
+import { IntervalUnitType } from "../../../../Const/IntervalUnit";
+
 interface Metadata {
     [id: string]: any;
 }
@@ -5,22 +8,24 @@ interface Metadata {
 export interface onCreateResult {
     account_id: string;
     billing_cycle_anchor: string;
-    cancel_at: string;
-    canceled_at: string;
+    cancel_at?: string;
+    canceled_at?: string;
     created_at: string;
-    currency: string;
+    currency: CurrencyType;
     customer_id: string;
     id: string;
     interval_count: number;
-    interval_unit: string;
-    metadata: Metadata;
-    next_payment_at: string;
-    pause_at: string;
-    paused_at: string;
+    interval_unit: IntervalUnitType;
+    metadata?: Metadata;
+    next_payment_at?: string;
+    pause_at?: string;
+    paused_at?: string;
     payment_method_id: string;
-    platform_fee_amount: number;
+    platform_fee_amount?: number;
     price: number;
-    resume_at: string;
+    resume_at?: string;
     status: string;
     updated_at: string;
+
+
 }
