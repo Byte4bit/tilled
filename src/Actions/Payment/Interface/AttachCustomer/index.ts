@@ -1,4 +1,4 @@
-import { RequestFuntionResult } from "../../../Request";
+import { RequestFuntionResult } from "../../../../Request";
 import { onAttachCustomerProps } from "./props";
 import { onAttachCustomerResult } from "./result";
 import { ErrorFenextjs } from "fenextjs-error/cjs/Fenextjs";

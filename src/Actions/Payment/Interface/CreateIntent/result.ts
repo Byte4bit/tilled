@@ -1,8 +1,8 @@
-import { FundingType } from "../../../Const/Funding";
-import { CurrencyType } from "../../../Const/Currency";
-import { OccurrenceType } from "../../../Const/Occurrence";
-import { PaymentMethodType } from "../../../Const/PaymentMethod";
-import { CardBrandType } from "../../../Const/CardBrand";
+import { FundingType } from "../../../../Const/Funding";
+import { CurrencyType } from "../../../../Const/Currency";
+import { OccurrenceType } from "../../../../Const/Occurrence";
+import { PaymentMethodType } from "../../../../Const/PaymentMethod";
+import { CardBrandType } from "../../../../Const/CardBrand";
 
 type Charge_status = "succeeded" | "pending" | "failed";
 

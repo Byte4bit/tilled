@@ -1,5 +1,5 @@
-import { AchDebitType } from "../../../Const/AchDebit";
-import { PaymentMethodType } from "../../../Const/PaymentMethod";
+import { AchDebitType } from "../../../../Const/AchDebit";
+import { PaymentMethodType } from "../../../../Const/PaymentMethod";
 export interface AchDebit {
     account_holder_name: string;
     account_number: string;

@@ -1,4 +1,4 @@
-import { TilledBase } from "../Base";
+import { TilledBase } from "../../Base";
 import { TilledPaymentProps } from "./Interface";
 import { Validators } from "./Validator";
 

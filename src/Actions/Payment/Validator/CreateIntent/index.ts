@@ -1,6 +1,6 @@
 import { onCreateProps } from "../../Interface/CreateIntent/props";
-import { CurrencyConst } from "../../../Const/Currency";
-import { PaymentMethodConst } from "../../../Const/PaymentMethod";
+import { CurrencyConst } from "../../../../Const/Currency";
+import { PaymentMethodConst } from "../../../../Const/PaymentMethod";
 import { FenextjsValidator } from "fenextjs-validator";
 
 export const ValidatorPaymentCreateIntent = FenextjsValidator<onCreateProps>()

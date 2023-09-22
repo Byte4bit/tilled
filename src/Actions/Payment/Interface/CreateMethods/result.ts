@@ -1,8 +1,8 @@
-import { AchDebitType } from "../../../Const/AchDebit";
-import { PaymentMethodType } from "../../../Const/PaymentMethod";
-import { FundingType } from "../../../Const/Funding";
-import { CardBrandType } from "../../../Const/CardBrand";
-import { ChecksType } from "../../../Const/Checks";
+import { AchDebitType } from "../../../../Const/AchDebit";
+import { PaymentMethodType } from "../../../../Const/PaymentMethod";
+import { FundingType } from "../../../../Const/Funding";
+import { CardBrandType } from "../../../../Const/CardBrand";
+import { ChecksType } from "../../../../Const/Checks";
 interface AchDebit {
     account_type: AchDebitType;
     bank_name: string;

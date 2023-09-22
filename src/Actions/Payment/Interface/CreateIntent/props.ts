@@ -1,7 +1,7 @@
-import { CurrencyType } from "../../../Const/Currency";
-import { PaymentMethodType } from "../../../Const/PaymentMethod";
-import { CaptureMethodType } from "../../../Const/CaptureMethod";
-import { OccurrenceType } from "../../../Const/Occurrence";
+import { CurrencyType } from "../../../../Const/Currency";
+import { PaymentMethodType } from "../../../../Const/PaymentMethod";
+import { CaptureMethodType } from "../../../../Const/CaptureMethod";
+import { OccurrenceType } from "../../../../Const/Occurrence";
 interface Level3 {
     duty_amount: number;
     line_items: LineItem[];
