@@ -1,4 +1,10 @@
-export const StatusConst = ["active" ,"canceled", "past_due", "paused", "pending"] as const;
+export const StatusConst = [
+    "active",
+    "canceled",
+    "past_due",
+    "paused",
+    "pending",
+] as const;
 
 export const Status = [...StatusConst];
 

@@ -4,4 +4,5 @@ export declare class TilledSubscription {
     private tilled;
     constructor(tilled: TilledBase);
     onCreateSubscription: TilledSubscriptionProps["onCreate"]["function"];
+    onCancelSubscription: TilledSubscriptionProps["onCancel"]["function"];
 }
