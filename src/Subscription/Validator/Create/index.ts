@@ -1,5 +1,7 @@
-import { onCreateProps, } from "../../Interface/Create/props";
+import { onCreateProps } from "../../Interface/Create/props";
+import { CurrencyConst } from "../../../Const/Currency";
 import { FenextjsValidator } from "fenextjs-validator";
+import { IntervalUnitConst } from "../../../Const/IntervalUnit";
 
 export const ValidatorSubscriptionCreate = FenextjsValidator<onCreateProps>()
     .setName("create-customer")
@@ -8,13 +10,17 @@ export const ValidatorSubscriptionCreate = FenextjsValidator<onCreateProps>()
         billing_cycle_anchor: FenextjsValidator().isString().isRequired(),
         currency: FenextjsValidator()
             .isString()
-            .isRequired().isEqual(CurrencyConst),
-            customer_id: FenextjsValidator()
-            .isString()
-            .isRequired(),
-        middle_name: FenextjsValidator()
+            .isRequired()
+            .isEqual(CurrencyConst),
+        customer_id: FenextjsValidator().isString().isRequired(),
+        interval_unit: FenextjsValidator()
             .isString()
             .isRequired()
-            .isMaxOrEqual(255),
-        phone: FenextjsValidator().isString().isRequired(),
+            .isEqual(IntervalUnitConst),
+        payment_method_id: FenextjsValidator().isString().isRequired(),
+        price: FenextjsValidator()
+            .isNumber()
+            .isRequired()
+            .isMinOrEqual(1)
+            .isMaxOrEqual(99999999),
     });

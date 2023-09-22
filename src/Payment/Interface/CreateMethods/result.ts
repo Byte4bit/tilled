@@ -1,5 +1,7 @@
+import { AchDebitType } from "../../../Const/AchDebit";
+import { PaymentMethodType } from "../../../Const/PaymentMethod";
 interface AchDebit {
-    account_type: "checking" | "savings";
+    account_type: AchDebitType;
     bank_name: string;
     last2: string;
     routing_number: string;
@@ -64,7 +66,7 @@ export interface onCreateResult {
     chargeable: boolean;
     created_at: string;
     id: string;
-    type: "card" | "ach_debit" | "eft_debit";
+    type: PaymentMethodType;
     updated_at: string;
     ach_debit?: AchDebit;
     billing_details?: BillingDetails;

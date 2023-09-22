@@ -1,5 +1,5 @@
-export type AchDebitType = "checking" | "savings";
-
+import { AchDebitType } from "../../../Const/AchDebit";
+import { PaymentMethodType } from "../../../Const/PaymentMethod";
 export interface AchDebit {
     account_holder_name: string;
     account_number: string;
@@ -41,7 +41,6 @@ export interface Metadata {
     [id: string]: any;
 }
 
-export type CreatePropsType = "card" | "ach_debit" | "eft_debit";
 export interface onCreateProps {
     ach_debit?: AchDebit;
     billing_details?: BillingDetails;
@@ -50,5 +49,5 @@ export interface onCreateProps {
     metadata?: Metadata;
     nick_name?: string;
     payment_token?: string;
-    type: CreatePropsType;
+    type: PaymentMethodType;
 }

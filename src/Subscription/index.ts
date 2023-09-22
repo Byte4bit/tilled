@@ -14,7 +14,7 @@ export class TilledSubscription {
             if (valid !== true) {
                 return valid;
             }
-            const url = "/v1/customers";
+            const url = "/v1/subscriptions";
             return await this.tilled.onRequest<
                 TilledSubscriptionProps["onCreate"]["props"],
                 TilledSubscriptionProps["onCreate"]["result"]
