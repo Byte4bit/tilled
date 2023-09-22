@@ -26,6 +26,4 @@ export interface onCreateResult {
     resume_at?: string;
     status: string;
     updated_at: string;
-
-
 }
