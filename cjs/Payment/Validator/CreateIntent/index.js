@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ValidatorPaymentCreateIntent = void 0;
-const props_1 = require("../../Interface/CreateIntent/props");
+const Currency_1 = require("../../../Const/Currency");
+const PaymentMethod_1 = require("../../../Const/PaymentMethod");
 const fenextjs_validator_1 = require("fenextjs-validator");
 exports.ValidatorPaymentCreateIntent = (0, fenextjs_validator_1.FenextjsValidator)()
     .setName("create-payment-intent")
@@ -14,12 +15,14 @@ exports.ValidatorPaymentCreateIntent = (0, fenextjs_validator_1.FenextjsValidato
     currency: (0, fenextjs_validator_1.FenextjsValidator)()
         .isString()
         .isRequired()
-        .isEqual(props_1.CurrencyConst),
+        .isEqual(Currency_1.CurrencyConst),
     payment_method_types: (0, fenextjs_validator_1.FenextjsValidator)()
-        .isArray()
+        .isArray((0, fenextjs_validator_1.FenextjsValidator)()
+        .isRequired()
+        .isString()
+        .isEqual(PaymentMethod_1.PaymentMethodConst))
         .isMaxOrEqual(1)
         .isRequired(),
-    // .isEqual(Payment_method_const),
     payment_method_id: (0, fenextjs_validator_1.FenextjsValidator)().isString().isRequired(),
 });
 //# sourceMappingURL=index.js.map

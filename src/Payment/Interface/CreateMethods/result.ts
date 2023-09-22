@@ -1,8 +1,8 @@
 import { AchDebitType } from "../../../Const/AchDebit";
 import { PaymentMethodType } from "../../../Const/PaymentMethod";
-import {FundingType} from '../../../Const/Funding'
-import {CardBrandType} from '../../../Const/CardBrand'
-import {ChecksType} from '../../../Const/Checks'
+import { FundingType } from "../../../Const/Funding";
+import { CardBrandType } from "../../../Const/CardBrand";
+import { ChecksType } from "../../../Const/Checks";
 interface AchDebit {
     account_type: AchDebitType;
     bank_name: string;
@@ -28,19 +28,19 @@ interface Address {
 
 interface Card {
     apple_pay: boolean;
-    brand:CardBrandType;
+    brand: CardBrandType;
     checks: Checks;
     exp_month: number;
     exp_year: number;
-    funding:FundingType
+    funding: FundingType;
     holder_name: string;
     last4: string;
 }
 
 interface Checks {
     address_line1_check: ChecksType;
-    address_postal_code_check: ChecksType
-    cvc_check: ChecksType
+    address_postal_code_check: ChecksType;
+    cvc_check: ChecksType;
 }
 
 interface EftDebit {

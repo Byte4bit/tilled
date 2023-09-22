@@ -1,8 +1,8 @@
-import {FundingType} from '../../../Const/Funding'
-import {CurrencyType} from '../../../Const/Currency'
-import {OccurrenceType} from '../../../Const/Occurrence'
-import {PaymentMethodType} from '../../../Const/PaymentMethod'
-import {CardBrandType} from '../../../Const/CardBrand'
+import { FundingType } from "../../../Const/Funding";
+import { CurrencyType } from "../../../Const/Currency";
+import { OccurrenceType } from "../../../Const/Occurrence";
+import { PaymentMethodType } from "../../../Const/PaymentMethod";
+import { CardBrandType } from "../../../Const/CardBrand";
 
 type Charge_status = "succeeded" | "pending" | "failed";
 
@@ -37,8 +37,6 @@ type Charge_Failure_code =
     | "try_again_later"
     | "internal_error";
 
-
-
 type Refund2_Status = "canceled" | "pending" | "succeeded" | "failed";
 
 type Failure_code =
@@ -58,7 +56,6 @@ type Reason =
     | "requested_by_customer"
     | "expired_uncaptured_charge"
     | "partial_capture";
-
 
 type CreateResult_status =
     | "canceled"
@@ -107,10 +104,7 @@ type LastPaymentError_code =
     | "try_again_later"
     | "internal_error";
 
-
 type Account_type = "checking" | "savings" | "unknown";
-
-
 
 type Checks_status = "pass" | "fail" | "unavailable" | "unchecked";
 

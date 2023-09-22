@@ -1,5 +1,10 @@
+import { AchDebitType } from "../../../Const/AchDebit";
+import { PaymentMethodType } from "../../../Const/PaymentMethod";
+import { FundingType } from "../../../Const/Funding";
+import { CardBrandType } from "../../../Const/CardBrand";
+import { ChecksType } from "../../../Const/Checks";
 interface AchDebit {
-    account_type: "checking" | "savings";
+    account_type: AchDebitType;
     bank_name: string;
     last2: string;
     routing_number: string;
@@ -20,18 +25,18 @@ interface Address {
 }
 interface Card {
     apple_pay: boolean;
-    brand: "amex" | "diners" | "discover" | "jcb" | "maestro" | "mastercard" | "solo" | "visa" | "visa_debit" | "visa_electron" | "unknown";
+    brand: CardBrandType;
     checks: Checks;
     exp_month: number;
     exp_year: number;
-    funding: "credit" | "debit" | "prepaid" | "unknown";
+    funding: FundingType;
     holder_name: string;
     last4: string;
 }
 interface Checks {
-    address_line1_check: "pass" | "fail" | "unavailable" | "unchecked";
-    address_postal_code_check: "pass" | "fail" | "unavailable" | "unchecked";
-    cvc_check: "pass" | "fail" | "unavailable" | "unchecked";
+    address_line1_check: ChecksType;
+    address_postal_code_check: ChecksType;
+    cvc_check: ChecksType;
 }
 interface EftDebit {
     bank_name: string;
@@ -46,7 +51,7 @@ export interface onCreateResult {
     chargeable: boolean;
     created_at: string;
     id: string;
-    type: "card" | "ach_debit" | "eft_debit";
+    type: PaymentMethodType;
     updated_at: string;
     ach_debit?: AchDebit;
     billing_details?: BillingDetails;

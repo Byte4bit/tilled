@@ -10,7 +10,8 @@ export class TilledSubscription {
 
     public onCreateSubscription: TilledSubscriptionProps["onCreate"]["function"] =
         async (data: TilledSubscriptionProps["onCreate"]["props"]) => {
-            const valid = Validators.ValidatorSubscriptionCreate.onValidate(data);
+            const valid =
+                Validators.ValidatorSubscriptionCreate.onValidate(data);
             if (valid !== true) {
                 return valid;
             }

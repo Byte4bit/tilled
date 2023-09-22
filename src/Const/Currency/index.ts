@@ -16,5 +16,4 @@ export const CurrencyConst = [
 
 export const Currency = [...CurrencyConst];
 
-
 export type CurrencyType = (typeof CurrencyConst)[number];

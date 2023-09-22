@@ -1,4 +1,4 @@
-export const AchDebitConst = ["checking" ,"savings"] as const;
+export const AchDebitConst = ["checking", "savings"] as const;
 
 export const AchDebit = [...AchDebitConst];
 

@@ -1,4 +1,4 @@
-export const FundingConst = ["credit" ,"debit" , "prepaid" , "unknown"] as const;
+export const FundingConst = ["credit", "debit", "prepaid", "unknown"] as const;
 
 export const Funding = [...FundingConst];
 

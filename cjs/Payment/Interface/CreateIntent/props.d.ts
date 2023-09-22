@@ -1,3 +1,7 @@
+import { CurrencyType } from "../../../Const/Currency";
+import { PaymentMethodType } from "../../../Const/PaymentMethod";
+import { CaptureMethodType } from "../../../Const/CaptureMethod";
+import { OccurrenceType } from "../../../Const/Occurrence";
 interface Level3 {
     duty_amount: number;
     line_items: LineItem[];
@@ -16,22 +20,15 @@ interface LineItem {
 interface Metadata {
     [id: string]: any;
 }
-type Currency = "aud" | "cad" | "dkk" | "eur" | "hkd" | "jpy" | "nzd" | "nok" | "gbp" | "zar" | "sek" | "chf" | "usd";
-export declare const CurrencyConst: string[];
-type Payment_method_types = "card" | "ach_debit" | "eft_debit" | "card_present";
-export declare const Payment_method_const: string[];
-type Capture_method = "automatic" | "manual";
-export declare const Capture_method_const: string[];
-type Occurrence_type = "consumer_ad_hoc" | "merchant_ad_hoc" | "merchant_recurring";
 export interface onCreateProps {
     amount: number;
-    currency: Currency;
-    payment_method_types: Payment_method_types[];
-    capture_method?: Capture_method;
+    currency: CurrencyType;
+    payment_method_types: PaymentMethodType[];
+    capture_method?: CaptureMethodType;
     confirm?: boolean;
     level3?: Level3;
     metadata?: Metadata;
-    occurrence_type?: Occurrence_type;
+    occurrence_type?: OccurrenceType;
     payment_method_id?: string;
     platform_fee_amount?: number;
     statement_descriptor_suffix?: string;

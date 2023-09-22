@@ -23,7 +23,6 @@ interface Metadata {
     [id: string]: any;
 }
 
-
 export interface onCreateProps {
     amount: number;
     currency: CurrencyType;
