@@ -1,8 +1,8 @@
 import { TilledBase } from "./Base";
 import { TilledConfigProps } from "./Config";
-import { TilledPayment } from "./Payment";
-import { TilledCustomer } from "./Customer";
-import { TilledSubscription } from "./Subscription";
+import { TilledPayment } from "./Actions/Payment";
+import { TilledCustomer } from "./Actions/Customer";
+import { TilledSubscription } from "./Actions/Subscription";
 export declare class Tilled extends TilledBase {
     payment: TilledPayment;
     customer: TilledCustomer;

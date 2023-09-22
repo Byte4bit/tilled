@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.__Tilled = exports.Tilled = void 0;
 const Base_1 = require("./Base");
-const Payment_1 = require("./Payment");
-const Customer_1 = require("./Customer");
-const Subscription_1 = require("./Subscription");
+const Payment_1 = require("./Actions/Payment");
+const Customer_1 = require("./Actions/Customer");
+const Subscription_1 = require("./Actions/Subscription");
 class Tilled extends Base_1.TilledBase {
     payment;
     customer;
