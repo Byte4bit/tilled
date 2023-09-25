@@ -10,7 +10,7 @@ npm i tilled-payment fenextjs-error
 #yarn
 yarn add tilled-payment fenextjs-error
 #bun
-bun add tilled-payment fenextjs-error
+bun i tilled-payment fenextjs-error
 ```
 
 ### Instance
