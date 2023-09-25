@@ -23,7 +23,6 @@ exports.ValidatorPaymentCreateMethod_ach_debit = (0, fenextjs_validator_1.Fenext
 });
 exports.ValidatorPaymentCreateMethod_billing_details = (0, fenextjs_validator_1.FenextjsValidator)()
     .setName("billing_details")
-    .isRequired()
     .isObject({
     address: (0, fenextjs_validator_1.FenextjsValidator)()
         .setName("address")
@@ -120,6 +119,5 @@ exports.ValidatorPaymentCreateMethod = (0, fenextjs_validator_1.FenextjsValidato
         is: (0, fenextjs_validator_1.FenextjsValidator)().isEqual("eft_debit"),
         then: exports.ValidatorPaymentCreateMethod_eft_debit,
     }),
-    billing_details: exports.ValidatorPaymentCreateMethod_billing_details,
 });
 //# sourceMappingURL=index.js.map

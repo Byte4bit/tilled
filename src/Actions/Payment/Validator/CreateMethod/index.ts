@@ -32,7 +32,6 @@ export const ValidatorPaymentCreateMethod_ach_debit =
 export const ValidatorPaymentCreateMethod_billing_details =
     FenextjsValidator<BillingDetails>()
         .setName("billing_details")
-        .isRequired()
         .isObject({
             address: FenextjsValidator<BillingDetails["address"]>()
                 .setName("address")
@@ -134,5 +133,4 @@ export const ValidatorPaymentCreateMethod = FenextjsValidator<onCreateProps>()
             is: FenextjsValidator().isEqual("eft_debit"),
             then: ValidatorPaymentCreateMethod_eft_debit,
         }),
-        billing_details: ValidatorPaymentCreateMethod_billing_details,
     });
