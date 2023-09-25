@@ -48,9 +48,9 @@ interface Metadata {
     [id: string]: any;
 }
 export interface onCreateResult {
+    id: string;
     chargeable: boolean;
     created_at: string;
-    id: string;
     type: PaymentMethodType;
     updated_at: string;
     ach_debit?: AchDebit;
