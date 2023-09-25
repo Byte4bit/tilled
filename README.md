@@ -16,7 +16,7 @@ bun i tilled-payment fenextjs-error
 ### Instance
 
 ```ts
-import { __Tilled } from "./src";
+import { __Tilled } from "tilled-payment";
 
 const tilled = __Tilled({
     mode: "sandbox",
