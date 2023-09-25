@@ -1,5 +1,5 @@
 {
-  "name": "tilled",
+  "name": "tilled-payment",
   "version": "1.0.0",
   "description": "payment tilled",
   "main": "./cjs/index.js",
